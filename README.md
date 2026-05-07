@@ -35,7 +35,7 @@ RESTful API server for the Review&RATE application. Handles user authentication,
 
 1. Clone the repository
 
-git clone https://github.com/your-username/review-rate-backend.git
+git clone https://github.com/99-tejrajdewangan/mern-company-review_B
 cd review-rate-backend
 
 2. Install dependencies
@@ -57,7 +57,7 @@ NODE_ENV	Environment (development/production)	development
 Important: Use a strong, unique JWT_SECRET in production.
 
 4. Start MongoDB
-Make sure MongoDB is running locally:
+Make sure MongoDB is running locally or MongoDB Atlas
 
 5. Run the Server
 Development mode (auto-restart with nodemon)
@@ -232,40 +232,3 @@ Create a new web service on your preferred platform.
 Set the environment variables (PORT, MONGODB_URI, JWT_SECRET, NODE_ENV).
 
 Use npm start as the start command.
-
-Deploy.
-
-Deploy using PM2 (production process manager)
-bash
-npm install -g pm2
-pm2 start index.js --name review-rate-api
-pm2 save
-pm2 startup
-Troubleshooting
-Issue	Solution
-MongoDB connection error	Check if MongoDB is running and MONGODB_URI is correct.
-JWT verification fails	Ensure JWT_SECRET is the same for token generation and verification.
-CORS errors	Make sure the cors middleware is enabled and frontend origin is allowed.
-Cannot add company (401)	Include valid Authorization: Bearer <token> header.
-Project Structure
-text
-backend/
-├── controllers/        # Business logic
-│   ├── authController.js
-│   ├── companyController.js
-│   └── reviewController.js
-├── models/             # Mongoose schemas
-│   ├── User.js
-│   ├── Company.js
-│   └── Review.js
-├── routes/             # API route definitions
-│   ├── authRoutes.js
-│   ├── companyRoutes.js
-│   └── reviewRoutes.js
-├── middleware/         # Custom middleware
-│   ├── authMiddleware.js
-│   └── errorMiddleware.js
-├── config/             # Configuration (db.js)
-├── .env                # Environment variables
-├── index.js            # Entry point
-└── package.json
