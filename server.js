@@ -14,6 +14,7 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   process.env.VITE_API_URI || "http://localhost:5173",
+  "https://tejcompanyreview.vercel.app",
 ];
 app.use(
   cors({
